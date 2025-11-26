@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights – Coursera Review Analysis</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Tab Style Sections */
+        .insight-box {
+            border: 1px solid #c5ccd6;
+            border-radius: 8px;
+            margin: 30px 0;
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+
+        .insight-header {
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: #2d4a72;
+            color: white;
+            cursor: pointer;
+        }
+
+        .insight-content {
+            padding: 20px;
+            display: block; /* You can change to "none" if you want collapsible behaviour */
+        }
+
+        .insight-content a {
+            color: #1d70b8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .insight-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Deep Insights from the Analysis</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="analysis.html">EDA</a>
+        <a href="nlp.html">NLP</a>
+        <a href="insights.html">Insights</a>
+    </nav>
+</header>
+
+<section class="content">
+
+    <h2>Summary</h2>
+    <p>
+        These insights summarize patterns extracted from more than 1.4 million Coursera reviews. 
+        Each section below focuses on one of the four core research questions identified in this project.
+        Where relevant, each insight links directly to the corresponding visualizations in the EDA or NLP pages.
+    </p>
+
+    <hr>
+
+
+    <!-- 1. Popularity Insight ----------------------------------------------------------- -->
+    <div class="insight-box">
+        <div class="insight-header">1. Popularity Reduces Satisfaction (Polarization Effect)</div>
+        <div class="insight-content">
+
+            <p>
+                The analysis reveals a consistent but subtle pattern: courses with higher review counts tend to have
+                slightly <strong>lower average ratings</strong> and <strong>higher variance</strong>.
+            </p>
+
+            <ul>
+                <li><strong>Correlation(popularity, avg_rating) ≈ –0.10</strong></li>
+                <li><strong>Correlation(popularity, rating_variance) ≈ +0.09</strong></li>
+                <li>Top 5% most reviewed courses have notably lower satisfaction than niche courses.</li>
+            </ul>
+
+            <p>
+                This is visible in:
+                <br>
+                → <a href="analysis.html#popularity_avg_rating_img">Popularity vs Average Rating Scatterplot</a><br>
+                → <a href="analysis.html#popularity_variance_img">Popularity vs Rating Variance Scatterplot</a>
+            </p>
+
+            <p>
+                As courses scale up, they attract learners with highly diverse expectations — causing 
+                <strong>polarized reactions</strong>.
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- 2. NLP Positive vs Negative Themes --------------------------------------------- -->
+    <div class="insight-box">
+        <div class="insight-header">2. Positive vs Negative Themes (NLP Analysis)</div>
+        <div class="insight-content">
+
+            <p>
+                Sentiment analysis and word clouds reveal strong contrasts between highly positive and 
+                highly negative reviews.
+            </p>
+
+            <h3>Positive Themes</h3>
+            <ul>
+                <li>Clear explanations and teaching quality</li>
+                <li>Beginner-friendly structure</li>
+                <li>Engaging instructors</li>
+                <li>Strong learning outcomes</li>
+            </ul>
+
+            <h3>Negative Themes</h3>
+            <ul>
+                <li>Confusing assignments and quizzes</li>
+                <li>Outdated or disorganized content</li>
+                <li>Fast or unclear teaching</li>
+                <li>Low-quality video/audio</li>
+            </ul>
+
+            <p>
+                View visuals here:
+                <br>
+                → <a href="nlp.html#wordcloud_5star_img">5-Star Word Cloud</a><br>
+                → <a href="nlp.html#wordcloud_1star_img">1-Star Word Cloud</a><br>
+                → <a href="nlp.html#sentiment_boxplot_img">Sentiment vs Rating Boxplot</a>
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- 3. Difficulty Insight ----------------------------------------------------------- -->
+    <div class="insight-box">
+        <div class="insight-header">3. Difficulty Strongly Predicts Learner Satisfaction</div>
+        <div class="insight-content">
+
+            <p>
+                Although difficulty is not explicitly labeled, NLP topics reveal clear signals: 
+                advanced courses show more frustration, while beginner-friendly courses show strongly positive sentiment.
+            </p>
+
+            <p>
+                This effect can be observed in:
+                <br>
+                → <a href="nlp.html#lda_topics_img">Topic Modeling Output</a>
+            </p>
+
+            <p>
+                The results support the educational psychology concept known as the 
+                <strong>Inverted-U Learning Curve</strong>:
+            </p>
+
+            <blockquote>
+                Too easy → boring<br>
+                Just right → satisfying<br>
+                Too hard → overwhelming → negative ratings
+            </blockquote>
+
+        </div>
+    </div>
+
+
+    <!-- 4. Institution Prestige Insight ------------------------------------------------- -->
+    <div class="insight-box">
+        <div class="insight-header">4. Institutional Prestige Does NOT Predict Course Quality</div>
+        <div class="insight-content">
+
+            <p>
+                Analysis of institution-level ratings shows that highly rated courses come from a mix of elite
+                universities, mid-tier institutions, and industry partners.
+            </p>
+
+            <p>
+                Visual reference:
+                <br>
+                → <a href="analysis.html#top_institutions_img">Top Institutions by Average Rating</a>
+            </p>
+
+            <p>
+                On Coursera, quality depends on:
+                <ul>
+                    <li>The instructor</li>
+                    <li>Course structure</li>
+                    <li>Clarity and pacing</li>
+                    <li>Practical usefulness</li>
+                </ul>
+                not global ranking.
+            </p>
+
+        </div>
+    </div>
+
+    <br><br>
+
+    <a class="btn" href="index.html">Back to Home →</a>
+
+</section>
+
+<footer>
+    <p>© 2025 Coursera Review Project | Built by Arushi Arunkumar</p>
+</footer>
+
+</body>
+</html>
