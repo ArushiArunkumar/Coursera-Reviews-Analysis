@@ -1,7 +1,7 @@
 # Coursera Reviews Analysis
 ### *A Large-Scale Data Science & NLP Study of 1.4 Million Online Course Reviews*
 
-**Project Website**: [To be updated]
+**Project Website**: [Github Page](https://arushiarunkumar.github.io/Coursera-Reviews-Analysis/)
 
 ---
 
