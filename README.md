@@ -10,7 +10,7 @@
 This project presents an analysis of 1.4 million Coursera course reviews, combining Data Science, Natural Language Processing (NLP), and data visualization techniques to recognise patterns in learner satisfaction, teaching quality, and course design effectiveness.
 
 The project checks for: 
-* quantitative trends - ratings, popularity, institutional performance) and 
+* quantitative trends - ratings, popularity, institutional performance, and 
 * qualitative signals - sentiment, topics, review themes
 They revealing deep insights into the dynamics of large-scale online education.
 
